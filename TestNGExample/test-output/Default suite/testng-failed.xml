@@ -5,9 +5,9 @@
     <classes>
       <class name="testng.Main">
         <methods>
+          <include name="fileUploadTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="executeTest"/>
         </methods>
       </class> <!-- testng.Main -->
     </classes>

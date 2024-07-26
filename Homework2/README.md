@@ -21,4 +21,13 @@
 7. Print the text in new tab
 8. Close the new tab
 
+# Exercise 4:
+1. Go to https://demoqa.com/browser-windows
+2. Click on "New Window" button
+4. Assert the text in new window equals “This is a sample page”
+5. Close the new window
+6. Click on "New Tab" button
+7. Print the text in new tab
+8. Close the new tab
+
 

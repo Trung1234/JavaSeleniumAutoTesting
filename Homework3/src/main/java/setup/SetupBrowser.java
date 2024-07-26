@@ -5,14 +5,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class SetupBrowser {
 
 	protected WebDriver driver;
 
-	@BeforeTest
+	@BeforeClass
 	public void setup() {
 		// Set the path to the chromedriver executable if needed
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
@@ -21,7 +21,7 @@ public class SetupBrowser {
 	}
 
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		if (driver != null) {
 			driver.quit();

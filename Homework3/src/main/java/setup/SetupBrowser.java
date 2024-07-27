@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -23,10 +24,15 @@ public class SetupBrowser {
 
 	@AfterClass
 	public void tearDown() {
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
+		try {
+			if (driver != null) {
+				driver.quit();
+				driver = null;
+			}
+        } catch (UnreachableBrowserException e) {
+            // Log the exception
+            System.out.println("Browser was unreachable");
+        }		
 	}
 
 

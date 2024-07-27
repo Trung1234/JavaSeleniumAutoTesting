@@ -1,6 +1,7 @@
 package page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -23,6 +24,10 @@ public class LoginPage {
 	}
 
 	public boolean isLoginSuccessful() {
-		return driver.findElement(By.cssSelector(".inventory_list")).isDisplayed();
+		try {
+		    return driver.findElement(By.cssSelector(".inventory_list")).isDisplayed();
+		} catch (NoSuchElementException e) {
+		    return false;
+		}		
 	}
 }

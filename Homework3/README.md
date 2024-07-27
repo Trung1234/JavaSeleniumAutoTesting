@@ -11,3 +11,11 @@
  - Page Object Model, also known as POM, is a design pattern in Selenium that creates an object repository for storing all web elements. 
 It helps reduce code duplication and improves test case maintenance.
  - Reference: https://www.browserstack.com/guide/page-object-model-in-selenium
+ 
+# Exercise 4: DATA DRIVEN TEST using DataProvider
+1. Go to https://www.saucedemo.com/
+2. Validate 2 fields Username and password with 4 cases:
+•	blank user, blank pass
+•	invalid user, valid pass
+•	invalid pass, valid user
+•	valid user, valid pass

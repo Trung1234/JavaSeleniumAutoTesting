@@ -26,8 +26,9 @@ public class Exercise4 {
 
         // 3. Navigate to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width webpage
         driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width");
-
+		// Switch to first frame
         driver.switchTo().frame(0);
+		// Switch to second frame
         driver.switchTo().frame(0);
         WebElement iframeElement = driver.findElement(By.xpath(" //h1[normalize-space()='This page is displayed in an iframe']"));
 

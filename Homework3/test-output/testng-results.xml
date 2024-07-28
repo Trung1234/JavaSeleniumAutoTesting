@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-27T12:27:23 ICT" name="Default suite" finished-at="2024-07-27T12:27:38 ICT" duration-ms="14163">
+  <suite started-at="2024-07-28T16:20:51 ICT" name="Default suite" finished-at="2024-07-28T16:21:37 ICT" duration-ms="46568">
     <groups>
     </groups>
-    <test started-at="2024-07-27T12:27:23 ICT" name="Default test" finished-at="2024-07-27T12:27:38 ICT" duration-ms="14163">
-      <class name="com.autotest.homework3.Exercise3">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.autotest.homework3.Exercise3@2f67a4d3]" started-at="2024-07-27T12:27:24 ICT" name="setup" finished-at="2024-07-27T12:27:28 ICT" duration-ms="4053" status="PASS">
+    <test started-at="2024-07-28T16:20:51 ICT" name="Default test" finished-at="2024-07-28T16:21:37 ICT" duration-ms="46568">
+      <class name="com.autotest.homework3.Exercise4">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:20:51 ICT" name="setup" finished-at="2024-07-28T16:20:54 ICT" duration-ms="3152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testLoginLogout()[pri:0, instance:com.autotest.homework3.Exercise3@2f67a4d3]" started-at="2024-07-27T12:27:28 ICT" name="testLoginLogout" finished-at="2024-07-27T12:27:37 ICT" duration-ms="9648" status="PASS">
+        <test-method signature="testValidateLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:20:54 ICT" name="testValidateLogin" data-provider="loginData" finished-at="2024-07-28T16:21:09 ICT" duration-ms="14708" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Bad request]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginLogout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.autotest.homework3.Exercise3@2f67a4d3]" started-at="2024-07-27T12:27:37 ICT" name="tearDown" finished-at="2024-07-27T12:27:38 ICT" duration-ms="390" status="PASS">
+        </test-method> <!-- testValidateLogin -->
+        <test-method signature="testValidateLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:21:09 ICT" name="testValidateLogin" data-provider="loginData" finished-at="2024-07-28T16:21:21 ICT" duration-ms="12719" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalidUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Resource not found]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidateLogin -->
+        <test-method signature="testValidateLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:21:21 ICT" name="testValidateLogin" data-provider="loginData" finished-at="2024-07-28T16:21:34 ICT" duration-ms="12379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[invalidPass]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Resource not found]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidateLogin -->
+        <test-method signature="testValidateLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:21:34 ICT" name="testValidateLogin" data-provider="loginData" finished-at="2024-07-28T16:21:37 ICT" duration-ms="2929" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Operation was successful]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidateLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.autotest.homework3.Exercise4@7f2cfe3f]" started-at="2024-07-28T16:21:37 ICT" name="tearDown" finished-at="2024-07-28T16:21:37 ICT" duration-ms="564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.autotest.homework3.Exercise3 -->
+      </class> <!-- com.autotest.homework3.Exercise4 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -14,8 +14,20 @@ It helps reduce code duplication and improves test case maintenance.
  
 # Exercise 4: DATA DRIVEN TEST using DataProvider
 1. Go to https://www.saucedemo.com/
-2. Validate 2 fields Username and password with 4 cases:
-•	blank user, blank pass
-•	invalid user, valid pass
-•	invalid pass, valid user
-•	valid user, valid pass
+2. Validate 2 fields Username and password with 4 cases:<space><space>
+	 1. blank user, blank pass.		 <space><space>
+	 2.invalid user, valid pass	.	<space><space> 
+	 3.invalid pass, valid user	.<space><space> 
+	 4.valid user, valid pass.
+	 
+# Exercise 5: DATA DRIVEN TEST using external file
+1.	Go to https://opensource-demo.orangehrmlive.com/
+2.	Get username and password to perform login
+3.	Click “Admin” on the left-side menu
+4.	Go to User Management
+5.	Click Add button
+6.	Fill all required fields to create new user (Data to input must be read from Excel file)
+7.	In list user table, search created username at step 6
+8.	select search result
+9.	verify created user info (compare with step 6)
+

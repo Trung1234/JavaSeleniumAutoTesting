@@ -1,5 +1,7 @@
 package com.autotest.homework3;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,8 +28,7 @@ public class Exercise5 extends SetupBrowser {
         XSSFWorkbook  workbook = new XSSFWorkbook(fileInputStream);
         XSSFSheet sheet = workbook.getSheetAt(0);
         int rowCount = sheet.getLastRowNum();
-        System.out.println("sheet.getRow(1) "+sheet.getRow(1));
-        System.out.println("sheet.getRow(2) "+sheet.getRow(2));
+  
         int columnCount = sheet.getRow(0).getLastCellNum();
         Object[][] data = new Object[rowCount][columnCount];
         for (int i = 1; i <= rowCount; i++) {
@@ -50,30 +50,31 @@ public class Exercise5 extends SetupBrowser {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         // Navigate to User Management
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+        // name attribute is not available for this element
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='#']//span[text()='Admin']")));
-        driver.findElement(By.xpath("//a[@href='#']//span[text()='Admin']")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/web/index.php/admin/viewSystemUsers']")));
-        driver.findElement(By.xpath("//a[@href='/web/index.php/admin/viewSystemUsers']")).click();
+        driver.findElement(By.xpath("//span[normalize-space()='Admin']")).click();
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/web/index.php/admin/viewSystemUsers']")));
+//        driver.findElement(By.xpath("//a[@href='/web/index.php/admin/viewSystemUsers']")).click();
 
         Thread.sleep(3000);
         // Click Add button
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']//i[@class='oxd-icon bi-plus']")));
-        driver.findElement(By.xpath("//button[@type='button']//i[@class='oxd-icon bi-plus']")).click();
+        driver.findElement(By.xpath("//button[normalize-space()='Add']")).click();
 
         // Fill required fields
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='User Role']/following::div")));
-        WebElement userRoleDropdown = driver.findElement(By.xpath("//label[text()='User Role']/following::div"));
+        WebElement userRoleDropdown = driver.findElement(By.xpath("(//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]"));
         userRoleDropdown.click();
         Thread.sleep(3000);
        // wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='option']//span[text()='" + userRole + "']")));
-        driver.findElement(By.xpath("//div[@role='option']//span[text()='" + userRole + "']")).click();
-
-        WebElement employeeNameInput = driver.findElement(By.xpath("//label[text()='Employee Name']/following::input"));
+        //driver.findElement(By.xpath("(//div[contains(text(),'-- Select --')])[1]")).click();
+        System.out.println(userRoleDropdown.getText());
+        WebElement employeeNameInput = driver.findElement(By.xpath("//input[@placeholder='Type for hints...']"));
         employeeNameInput.sendKeys(employeeName);
         Thread.sleep(3000);
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='option']//span[text()='" + employeeName + "']")));
-        driver.findElement(By.xpath("//div[@role='option']//span[text()='" + employeeName + "']")).click();
+        //driver.findElement(By.xpath("//div[@role='option']//span[text()='" + employeeName + "']")).click();
 
         WebElement usernameInput = driver.findElement(By.xpath("//label[text()='Username']/following::input"));
         usernameInput.sendKeys(username);
@@ -90,6 +91,27 @@ public class Exercise5 extends SetupBrowser {
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='option']//span[text()='" + status + "']")));
         driver.findElement(By.xpath("//div[@role='option']//span[text()='" + status + "']")).click();
 //        driver.findElement(By
+        driver.findElement(By.id("btnSave")).click();
+
+        // Step 7: In list user table, search created username at step 6
+        WebElement searchInput = driver.findElement(By.id("searchSystemUser_userName"));
+        searchInput.sendKeys(username);
+
+        driver.findElement(By.id("searchBtn")).click();
+
+        // Step 8: Select search result
+        WebElement searchResult = driver.findElement(By.linkText(username));
+        searchResult.click();
+
+        // Step 9: Verify created user info (compare with step 6)
+        WebElement createdUsername = driver.findElement(By.id("//div[contains(text(),'"+username+"')]"));
+        assertEquals(createdUsername.getText(), username);
+        //assert createdUsername.getAttribute("value").equals(username);
+
+//        WebElement createdEmployeeName = driver.findElement(By.id("//div[contains(text(),'"+employeeName+"')]"));
+//        assertEquals(createdEmployeeName.getText(), employeeName);
+       // assert createdEmployeeName.getAttribute("value").equals(employeeName);
+    
 }
 
 }

@@ -41,5 +41,8 @@ Steps:
 5. Fill all required fields to create new campaign
 6. Click Save
 7. Verify the success message will be displayed
+### Reference
+   https://www.browserstack.com/guide/dataprovider-in-selenium-testng
+   https://toolsqa.com/testng/testng-data-provider-excel/
 
 

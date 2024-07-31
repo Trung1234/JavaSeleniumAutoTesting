@@ -21,6 +21,7 @@ public class SetupBrowser {
 		// Set the path to the chromedriver executable if needed
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 		driver = new ChromeDriver();
+		 driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, 10);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}

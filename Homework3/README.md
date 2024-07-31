@@ -31,3 +31,15 @@ It helps reduce code duplication and improves test case maintenance.
 8.	select search result
 9.	verify created user info (compare with step 6)
 
+# Exercise 6: DATA DRIVEN TEST using external file 
+Data to input must be read from Excel file.
+Steps:
+1. https://admin-demo.nopcommerce.com/login
+2. Get username and password to perform login
+3. Go to Promotions/ Campaigns
+4. Click "Add new" button
+5. Fill all required fields to create new campaign
+6. Click Save
+7. Verify the success message will be displayed
+
+

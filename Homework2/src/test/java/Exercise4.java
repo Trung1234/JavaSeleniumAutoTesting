@@ -1,43 +1,33 @@
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Exercise4 {
-    @Test
-    public void executeTest() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        // 1. Open Chrome browser
-        // (already done above)
+import common.SetupBrowser;
 
-        // 2. Maximize the browser window
-        driver.manage().window().maximize();
+public class Exercise4 extends SetupBrowser {
+	@Test
+	public void executeTest() throws InterruptedException {
 
-        // 3. Navigate to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width webpage
-        driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width");
-		// Switch to first frame
-        driver.switchTo().frame(0);
-		// Switch to second frame
-        driver.switchTo().frame(0);
-        WebElement iframeElement = driver.findElement(By.xpath(" //h1[normalize-space()='This page is displayed in an iframe']"));
+		// Navigate to the webpage
+		driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width");
 
-        String iframeText = iframeElement.getText();
+		// Switch to the iframe
+		driver.switchTo().frame("iframeResult");
+		// Switch to the child iframe
+		driver.switchTo().frame(0);
 
-        if (iframeText.contains("This page is displayed in an iframe")) {
-            System.out.println("Expected text found!");
-        } else {
-            System.out.println("Expected text not found!");
-        }
-        System.out.println(iframeText);
-        Thread.sleep(2000);
-        driver.switchTo().parentFrame();
-        Thread.sleep(3000);
-        driver.close();
-        assertEquals(iframeText, "This page is displayed in an iframe");
-    }
+		// Get and check the expected text
+		WebElement textElement = driver.findElement(By.tagName("h1"));
+		String actualText = textElement.getText();
+		if (actualText.contains("This page is displayed in an iframe")) {
+			System.out.println("Expected text found!");
+		} else {
+			System.out.println("Expected text not found!");
+		}
+		assertEquals(actualText, "This page is displayed in an iframe");
+
+	}
 }

@@ -1,6 +1,5 @@
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,19 +17,24 @@ public class Exercise1  {
 //        WebElement To=driver.findElement(By.id("shoppingCart4"));
 
         //Element which needs to drag.
-        WebElement From=driver.findElement(By.xpath("//*[@id='fourth']/a"));
+        try {
+        	WebElement From=driver.findElement(By.xpath("//*[@id='fourth']/a"));
 
-        //Element on which need to drop.
-        WebElement To=driver.findElement(By.xpath("//*[@id='amt7']/li"));
-        //WebElement To=driver.findElement(By.xpath("//*[@id='bank']/li"));
-        //Using Action class for drag and drop.
-        Actions act=new Actions(driver);
+            //Element on which need to drop.
+            WebElement To=driver.findElement(By.xpath("//*[@id='amt7']/li"));
+            //WebElement To=driver.findElement(By.xpath("//*[@id='bank']/li"));
+            //Using Action class for drag and drop.
+            Actions act=new Actions(driver);
 
-        //Dragged and dropped.
-        act.dragAndDrop(From, To).build().perform();
+            //Dragged and dropped.
+            act.dragAndDrop(From, To).build().perform();
 
-        Thread.sleep(5000);
-        closeDriver();
+            Thread.sleep(3000);
+        }finally {
+        	 closeDriver();
+        }
+        
+       
     }
 
     private static void setUpDriver() throws InterruptedException {

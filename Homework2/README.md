@@ -27,6 +27,10 @@
 2. Maximize the browser window 
 3. Navigate to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width  
 webpage 
-4. Get and Check expected text as “This page is displayed in an iframe 
+4. Get and Check expected text as “This page is displayed in an iframe
+
+   
+   ![image](https://github.com/user-attachments/assets/bd980978-b930-4513-8abb-03056d2f56a4)
+
 
 

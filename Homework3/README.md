@@ -19,6 +19,8 @@ It helps reduce code duplication and improves test case maintenance.
 	 2.invalid user, valid pass	.	<space><space> 
 	 3.invalid pass, valid user	.<space><space> 
 	 4.valid user, valid pass.
+
+### Reference: https://www.browserstack.com/guide/dataprovider-in-selenium-testng
 	 
 # Exercise 5: DATA DRIVEN TEST using external file
 1.	Go to https://opensource-demo.orangehrmlive.com/
@@ -30,4 +32,19 @@ It helps reduce code duplication and improves test case maintenance.
 7.	In list user table, search created username at step 6
 8.	select search result
 9.	verify created user info (compare with step 6)
+
+# Exercise 6: DATA DRIVEN TEST using external file 
+Data to input must be read from Excel file.
+Steps:
+1. https://admin-demo.nopcommerce.com/login
+2. Get username and password to perform login
+3. Go to Promotions/ Campaigns
+4. Click "Add new" button
+5. Fill all required fields to create new campaign
+6. Click Save
+7. Verify the success message will be displayed
+### Reference
+   + https://www.browserstack.com/guide/dataprovider-in-selenium-testng
+   + https://toolsqa.com/testng/testng-data-provider-excel/
+
 

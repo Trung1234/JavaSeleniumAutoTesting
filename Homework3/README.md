@@ -19,6 +19,8 @@ It helps reduce code duplication and improves test case maintenance.
 	 2.invalid user, valid pass	.	<space><space> 
 	 3.invalid pass, valid user	.<space><space> 
 	 4.valid user, valid pass.
+
+### Reference: https://www.browserstack.com/guide/dataprovider-in-selenium-testng
 	 
 # Exercise 5: DATA DRIVEN TEST using external file
 1.	Go to https://opensource-demo.orangehrmlive.com/

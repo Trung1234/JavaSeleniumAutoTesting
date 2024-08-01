@@ -5,7 +5,7 @@
 4. Write a code to perform drag and drop operation from source to target.
 ![alt text](https://github.com/user-attachments/assets/1cd59f8d-a3ff-4ea4-bf45-c86c5937d0ca)
 
-# Exercis!e 2:
+# Exercise 2:
 1. Open Chrome browser
 2. Maximize the browser window
 3. Navigate to http://demo.guru99.com/test/simple_context_menu.html

@@ -1,79 +1,74 @@
-import common.DriverManager;
-import org.junit.BeforeClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
-public class Exercise3 {
+import common.SetupBrowser;
+
+
+public class Exercise3  extends SetupBrowser {
+
+
+    private static final String SAMPLE_HEADING  = "This is a sample page";
+
     @Test
-    public void executeTestNewWindow() {
-        DriverManager driverManager = DriverManager.createDriverManager("chrome", true);
-        driverManager.navigate("https://demoqa.com/browser-windows");
+    public void executeTestNewWindowAndTab() {
+        //DriverManager driverManager = DriverManager.createDriverManager("chrome", true);
+        driver.get("https://demoqa.com/browser-windows");
 
-        WebElement element = driverManager.findElement(By.id("windowButton"));
 
-        Actions actions = new Actions(driverManager.getDriver());
+        WebElement element = driver.findElement(By.id("windowButton"));
+        WebElement elementNewTab = driver.findElement(By.id("tabButton"));
+        Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
 
-        // Get the handle of the current window
-        String currentWindowHandle = driverManager.getWindowHandle();
-
-        // Get the handles of all windows
-        Set<String> windowHandles = driverManager.getWindowHandles();
 
         // Switch to the new window
-        for (String windowHandle : windowHandles) {
-            if (!windowHandle.equals(currentWindowHandle)) {
-                driverManager.switchToWindow(windowHandle);
+
+        Object[] windowHandles = driver.getWindowHandles().toArray();
+        driver.switchTo().window((String) windowHandles[1]);
+
+        // Now you can get elements on the new window
+        WebElement elementOnNewWindow = driver.findElement(By.id("sampleHeading"));
+
+        String elementOnNewWindowHeading = elementOnNewWindow.getText();
+
+        //closing current window
+        driver.close();
+        //Switch back to the old tab or window
+        driver.switchTo().window((String) windowHandles[0]);
+
+
+        actions.moveToElement(elementNewTab).click().perform();
+
+
+        // Get the handle of the current window
+        String currentTabHandle = driver.getWindowHandle();
+
+        // Get the handles of all windows
+        Set<String> tabHandles = driver.getWindowHandles();
+
+
+        // Switch to the new window
+        for (String tabHandle : tabHandles) {
+            if (!tabHandle.equals(currentTabHandle)) {
+                driver.switchTo().window(tabHandle);
                 break;
             }
         }
-        // Now you can get elements on the new window
-        WebElement elementOnNewWindow = driverManager.findElement(By.id("sampleHeading"));
 
-        String test = elementOnNewWindow.getText();
+        WebElement elementOnNewTab = driver.findElement(By.id("sampleHeading"));
+        String newTabHeading = elementOnNewTab.getText();
+        driver.close();
 
-        driverManager.close();;
-
-        assertEquals(test, "This is a sample page");
+        // Step 6:  Print the text in new tab
+        System.out.println("This is heading of new tab" + newTabHeading);
+        assertEquals(SAMPLE_HEADING ,elementOnNewWindowHeading);
+        assertEquals(SAMPLE_HEADING, newTabHeading);
     }
-
-//    @Test
-//    public void executeTestNewWTab() {
-//        DriverManager driverManager = DriverManager.createDriverManager("chrome", true);
-//        driverManager.navigate("https://demoqa.com/browser-windows");
-//
-//        WebElement elementNewTab = driverManager.findElement(By.id("tabButton"));
-//        Actions actions = new Actions(driverManager.getDriver());
-//        actions.moveToElement(elementNewTab).click().perform();
-//
-//
-//        // Get the handle of the current window
-//        String currentTabHandle = driverManager.getWindowHandle();
-//
-//// Get the handles of all windows
-//        Set<String> tabHandles = driverManager.getWindowHandles();
-//
-//
-//// Switch to the new window
-//        for (String tabHandle : tabHandles) {
-//            if (!tabHandle.equals(currentTabHandle)) {
-//                driverManager.switchToWindow(tabHandle);
-//                break;
-//            }
-//        }
-//        driverManager.close();
-//        WebElement elementOnNewTab = driverManager.findElement(By.id("sampleHeading"));
-//        String test = elementOnNewTab.getText();
-//        System.out.println("This is heading of new tab"+elementOnNewTab.getText());
-//        assertEquals(test, "This is a sample page");
-//    }
-
 
 }

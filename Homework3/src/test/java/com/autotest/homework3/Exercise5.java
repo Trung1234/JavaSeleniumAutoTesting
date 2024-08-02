@@ -38,9 +38,12 @@ public class Exercise5 extends SetupBrowser {
 		Thread.sleep(2000);
 		// Click Add button
 		driver.findElement(By.xpath("//button[normalize-space()='Add']")).click();
+		WebElement statusDropdown = driver.findElement(By.xpath("//label[text()='Status']/following::div"));
+		statusDropdown.click();
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + status + "']")).click();
-		Thread.sleep(3000);
+
 		// Fill required fields
 		WebElement userRoleDropdown = driver.findElement(By.xpath(
 				"(//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]"));

@@ -15,10 +15,10 @@ It helps reduce code duplication and improves test case maintenance.
 # Exercise 4: DATA DRIVEN TEST using DataProvider
 1. Go to https://www.saucedemo.com/
 2. Validate 2 fields Username and password with 4 cases:<space><space>
-	 1. blank user, blank pass.		 <space><space>
-	 2.invalid user, valid pass	.	<space><space> 
-	 3.invalid pass, valid user	.<space><space> 
-	 4.valid user, valid pass.
+	 - blank user, blank pass.		 <space><space>
+	 - invalid user, valid pass	.	<space><space> 
+	 - invalid pass, valid user	.<space><space> 
+	 - valid user, valid pass.
 
 ### Reference: https://www.browserstack.com/guide/dataprovider-in-selenium-testng
 	 

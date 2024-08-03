@@ -37,6 +37,24 @@ public class Exercise5 extends SetupBrowser {
 
 		Thread.sleep(2000);
 		// Click Add button
+//		driver.findElement(By.xpath("//button[normalize-space()='Add']")).click();
+//		WebElement statusDropdown = driver.findElement(By.xpath("//label[text()='Status']/following::div"));
+//		statusDropdown.click();
+//		Thread.sleep(2000);
+//
+//		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + status + "']")).click();
+//
+//		// Fill required fields
+//		WebElement userRoleDropdown = driver.findElement(By.xpath(
+//				"(//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]"));
+//		userRoleDropdown.click();
+//		Thread.sleep(3000);
+//
+//		System.out.println(userRoleDropdown.getText());
+//		WebElement employeeNameInput = driver.findElement(By.xpath("//input[@placeholder='Type for hints...']"));
+//		employeeNameInput.sendKeys(employeeName);
+//		Thread.sleep(3000);
+		// Click Add button
 		driver.findElement(By.xpath("//button[normalize-space()='Add']")).click();
 		WebElement statusDropdown = driver.findElement(By.xpath("//label[text()='Status']/following::div"));
 		statusDropdown.click();
@@ -45,26 +63,28 @@ public class Exercise5 extends SetupBrowser {
 		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + status + "']")).click();
 
 		// Fill required fields
-		WebElement userRoleDropdown = driver.findElement(By.xpath(
-				"(//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]"));
+		WebElement userRoleDropdown = driver.findElement(By.xpath("//label[text()='User Role']/following::div"));
 		userRoleDropdown.click();
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + userRole + "']")).click();
 
-		System.out.println(userRoleDropdown.getText());
+		// System.out.println(userRoleDropdown.getText());
 		WebElement employeeNameInput = driver.findElement(By.xpath("//input[@placeholder='Type for hints...']"));
 		employeeNameInput.sendKeys(employeeName);
 		Thread.sleep(3000);
-//
-//
-//		WebElement usernameInput = driver.findElement(By.xpath("//label[text()='Username']/following::input"));
-//		usernameInput.sendKeys(username);
-//
-//		WebElement passwordInput = driver.findElement(By.xpath("//label[text()='Password']/following::input"));
-//		passwordInput.sendKeys(password);
-//
-//		WebElement confirmPasswordInput = driver
-//				.findElement(By.xpath("//label[text()='Confirm Password']/following::input"));
-//		confirmPasswordInput.sendKeys(password);
+		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + employeeName + "']")).click();
+		Thread.sleep(2000);
+
+
+		WebElement usernameInput = driver.findElement(By.xpath("//label[text()='Username']/following::input"));
+		usernameInput.sendKeys(username);
+
+		WebElement passwordInput = driver.findElement(By.xpath("//label[text()='Password']/following::input"));
+		passwordInput.sendKeys(password);
+
+		WebElement confirmPasswordInput = driver
+				.findElement(By.xpath("//label[text()='Confirm Password']/following::input"));
+		confirmPasswordInput.sendKeys(password);
 //
 //		WebElement statusDropdown = driver.findElement(By.xpath("//label[text()='Status']/following::div"));
 //		statusDropdown.click();
@@ -72,7 +92,8 @@ public class Exercise5 extends SetupBrowser {
 //
 //		driver.findElement(By.xpath("//div[@role='option']//span[text()='" + status + "']")).click();
 
-//		driver.findElement(By.id("btnSave")).click();
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(5000);
 
 		// Step 7: In list user table, search created username at step 6
 //        WebElement searchInput = driver.findElement(By.id("searchSystemUser_userName"));

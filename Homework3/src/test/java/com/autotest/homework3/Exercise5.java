@@ -1,3 +1,4 @@
+
 package com.autotest.homework3;
 
 import static org.testng.Assert.assertEquals;
@@ -82,9 +83,12 @@ public class Exercise5 extends SetupBrowser {
 
 		// Step 8: Select search result
 
-		WebElement createdUsername = driver.findElement(By.xpath("//div[contains(text(),'" + username + "')]"));
+		driver.findElement(By.xpath("//i[@class='oxd-icon bi-pencil-fill']")).click();
+
+		Thread.sleep(10000);
+		WebElement createdUsername = driver.findElement(By.xpath("//input[@autocomplete='off']"));
 		// Step 9: Verify created user info (compare with step 6)
-		assertEquals(createdUsername.getText(), username);
+		assertEquals(createdUsername.getAttribute("value"), username);
 	}
 
 }

@@ -1,3 +1,6 @@
+## Xpath or CSS Selector
+![image](https://github.com/user-attachments/assets/c08b17ec-b522-4cbf-b228-bfc9e957b780)
+
 ## Locating elements with XPath axes
  - XPath axes help to locate elements based on the element's relationship with other elements in a document.
 

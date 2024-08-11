@@ -1,5 +1,6 @@
 # Benefits of Auto Testing
-![image](https://github.com/user-attachments/assets/1fe723b0-a7d6-4cdc-ba25-4c9c6a9b60a9)
+![image](https://github.com/user-attachments/assets/a9c8ebe1-c270-4c55-9091-d91dbe0e2a32)
+
 
 
  # Automation Testing vs. Manual Testing

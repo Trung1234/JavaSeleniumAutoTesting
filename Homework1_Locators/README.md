@@ -1,3 +1,7 @@
+## Locating elements with XPath axes
+ - XPath axes help to locate elements based on the element's relationship with other elements in a document.
+
+![image](https://github.com/user-attachments/assets/51c672f8-be3d-495d-bfd9-049f1729c244)
 
 https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/
 

@@ -1,5 +1,6 @@
-# Auto Testing
- Repository for practicing Java Selenium Auto Testing
+# Benefits of Auto Testing
+![image](https://github.com/user-attachments/assets/1fe723b0-a7d6-4cdc-ba25-4c9c6a9b60a9)
+
 
  # Automation Testing vs. Manual Testing
 

@@ -1,3 +1,6 @@
+
+https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/
+
 # Exercise 1: 
 ### Using browser tools for inspecting elements and page structure:
 1. Go to the URL: https://demoqa.com/automation-practice-form

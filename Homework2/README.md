@@ -26,7 +26,14 @@
 7. Print the text in new tab
 8. Close the new tab
 
+
 # Exercise 4:
+1. Open Chrome browser
+2. Maximize the browser window
+3. Navigate to https://demoqa.com/frames
+4. Get and Check expected text as “This is a sample page”
+   
+# Exercise 4:(OLD)
 1. Open Chrome browser 
 2. Maximize the browser window 
 3. Navigate to https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe_height_width  

@@ -1,3 +1,6 @@
+#ID Locator in Selenium
+ID locator in Selenium is the most preferred and fastest way to locate desired WebElements on the page. ID locators are unique for each element in the DOM.
+Since IDs are unique for each element on the page, it is considered the fastest and safest method to locate elements. 
 ## Xpath or CSS Selector
 ![image](https://github.com/user-attachments/assets/c08b17ec-b522-4cbf-b228-bfc9e957b780)
 

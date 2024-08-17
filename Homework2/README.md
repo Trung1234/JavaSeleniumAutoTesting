@@ -32,6 +32,8 @@
 2. Maximize the browser window
 3. Navigate to https://demoqa.com/frames
 4. Get and Check expected text as “This is a sample page”
+   ![image](https://github.com/user-attachments/assets/129e15aa-8224-4bd4-9f86-9431a3eeefb1)
+
    
 # Exercise 4:(OLD)
 1. Open Chrome browser 

@@ -16,7 +16,7 @@ public class Exercise3  extends SetupBrowser {
     private static final String SAMPLE_HEADING  = "This is a sample page";
 
     @Test
-    public void executeTestNewWindowAndTab() {
+    public void executeTestNewWindowAndTab() throws InterruptedException {
         //DriverManager driverManager = DriverManager.createDriverManager("chrome", true);
         driver.get("https://demoqa.com/browser-windows");
 
@@ -26,7 +26,7 @@ public class Exercise3  extends SetupBrowser {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
 
-
+        Thread.sleep(4000);
         // Switch to the new window
 
         Object[] windowHandles = driver.getWindowHandles().toArray();

@@ -1,6 +1,12 @@
 ## Frames and Iframes
 ![image](https://github.com/user-attachments/assets/51327712-e545-44c7-b7d3-1eaad18fc23a)
 
+## Implicit wait and Explicit wait
+![image](https://github.com/user-attachments/assets/3d0e3524-cb95-4de9-ba32-91248aba643e)
+
+## Scroll into the View 
+- In Selenium, JavaScriptExecutor is used to scroll the page and make the web element visible within the viewport of the web page. Some webpages are long and dynamic in nature and as it is scrolled, it shows data to the user. 
+ https://www.browserstack.com/guide/understanding-element-not-interactable-exception-in-selenium
 
 # Exercise 1: 
 1. Open Chrome browser

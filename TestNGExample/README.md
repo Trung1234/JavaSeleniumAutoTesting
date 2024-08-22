@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/b61ef263-7acf-4c3a-a7bb-1882b08916c5)
 
 ###  **TestNG** is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use, such as:
 + Annotations.
@@ -28,6 +29,7 @@ run shortly before the first test method that belongs to any of these groups is 
 +  **@AfterClass**: The annotated method will be run after all the test methods in the current class have been run.
 +  **@BeforeMethod**: The annotated method will be run before each test method.
 +  **@AfterMethod**: The annotated method will be run after each test method.
+![image](https://github.com/user-attachments/assets/29d205ba-4d94-4189-aaca-f8f335f68253)
 
 
 

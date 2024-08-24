@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,16 +13,18 @@ import setup.SetupBrowser;
 
 public class Exercise6 extends SetupBrowser {
 
+	
+	
 
     @DataProvider(name = "campaignData")
     public Object[][] getCampaignData() {
-        String filePath = "NewCampaigns.xlsx"; // file name in src/test/resources folder
+        String filePath = "Campaigns.xlsx"; // file name in src/test/resources folder
         ClassLoader classLoader = Exercise5.class.getClassLoader();
         return ExcelUtils.getExcelData(classLoader.getResource( filePath).getFile() ,"CampaignData");
     }
 
     @Test(dataProvider = "campaignData")
-    public void createCampaignTest(String username, String password, String campaignName, String description) {
+    public void createCampaignTest(String username, String password, String campaignName, String description) throws InterruptedException {
         // Step 1: Login
         driver.get("https://admin-demo.nopcommerce.com/login");
         WebElement emailField = driver.findElement(By.id("Email"));
@@ -33,6 +36,8 @@ public class Exercise6 extends SetupBrowser {
         passwordField.clear();
         passwordField.sendKeys(password);
         loginButton.click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='checkbox']"))).click(); 
 
         // Step 2: Go to Promotions/Campaigns
         driver.findElement(By.xpath("//p[normalize-space()='Promotions']")).click();

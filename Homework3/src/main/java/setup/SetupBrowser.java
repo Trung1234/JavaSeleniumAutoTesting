@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -18,9 +19,17 @@ public class SetupBrowser {
 
 	@BeforeClass
 	public void setup() {
+		ChromeOptions options = new ChromeOptions();
+
+		options.addArguments("start-maximized");
+
+		options.addArguments("disable-infobars");
+
+		options.addArguments("--disable-extensions");
 		// Set the path to the chromedriver executable if needed
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
+				
 		 driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, 10);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

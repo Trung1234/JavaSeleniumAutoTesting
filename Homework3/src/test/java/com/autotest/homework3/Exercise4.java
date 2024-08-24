@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import common.ResultCode;
-import page.LoginPage;
+import page.SauceDemoLoginPage;
 import setup.SetupBrowser;
 
 public class Exercise4 extends SetupBrowser {
@@ -24,7 +24,7 @@ public class Exercise4 extends SetupBrowser {
 		// 1. Go to https://www.saucedemo.com/
 		driver.get("https://www.saucedemo.com/");
 
-		LoginPage loginPage = new LoginPage(driver);
+		SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver);
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		// 2. Validate 2 fields Username and password with 4 cases:

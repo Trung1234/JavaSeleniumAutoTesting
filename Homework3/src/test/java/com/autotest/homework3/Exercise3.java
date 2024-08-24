@@ -4,8 +4,8 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import page.HomePage;
-import page.LoginPage;
+import page.SauceDemoHomePage;
+import page.SauceDemoLoginPage;
 import setup.SetupBrowser;
 
 /**
@@ -20,7 +20,7 @@ public class Exercise3 extends SetupBrowser {
 		// 1. Go to https://www.saucedemo.com/
         driver.get("https://www.saucedemo.com/");
 
-        LoginPage loginPage = new LoginPage(driver);
+        SauceDemoLoginPage loginPage = new SauceDemoLoginPage(driver);
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
         // 2. Login with valid account
@@ -28,7 +28,7 @@ public class Exercise3 extends SetupBrowser {
         // 3. Verify login successful or not
         assertTrue(loginPage.isLoginSuccessful());
         Thread.sleep(3000);
-        HomePage homePage = new HomePage(driver);
+        SauceDemoHomePage homePage = new SauceDemoHomePage(driver);
         // 4. Click top left menu
         homePage.clickMenu();
         Thread.sleep(2000);

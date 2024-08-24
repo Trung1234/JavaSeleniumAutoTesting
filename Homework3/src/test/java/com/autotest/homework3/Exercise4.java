@@ -14,6 +14,7 @@ public class Exercise4 extends SetupBrowser {
 
 	/**
 	 * Validate 2 fields Username and password
+	 * 
 	 * @param username
 	 * @param password
 	 * @param expectedResult
@@ -31,7 +32,7 @@ public class Exercise4 extends SetupBrowser {
 		loginPage.clickLogin();
 		Thread.sleep(2000);
 		// Verify login successful or not
-		if(ResultCode.SUCCESS.getMessage().equals(expectedResult)) {			
+		if (ResultCode.SUCCESS.getMessage().equals(expectedResult)) {
 			assertTrue(loginPage.isLoginSuccessful());
 		} else {
 			assertFalse(loginPage.isLoginSuccessful());
@@ -40,7 +41,7 @@ public class Exercise4 extends SetupBrowser {
 
 	@DataProvider(name = "loginData")
 	public Object[][] getDataLogin() {
-		Object[][] data = new Object[4][3];
+		Object[][] data = new Object[5][3];
 
 		// blank user, blank pass
 		data[0][0] = "";
@@ -55,13 +56,17 @@ public class Exercise4 extends SetupBrowser {
 		// invalid pass, valid user
 		data[2][0] = "standard_user";
 		data[2][1] = "invalidPass";
-		data[2][2] =  ResultCode.NOT_FOUND.getMessage();
+		data[2][2] = ResultCode.NOT_FOUND.getMessage();
 
 		// valid user, valid pass
 		data[3][0] = "standard_user";
 		data[3][1] = "secret_sauce";
 		data[3][2] = ResultCode.SUCCESS.getMessage();
 
+		// invalid pass, invalid user
+		data[4][0] = "standard_user";
+		data[4][1] = "invalidPass";
+		data[4][2] = ResultCode.NOT_FOUND.getMessage();
 		return data;
 	}
 }

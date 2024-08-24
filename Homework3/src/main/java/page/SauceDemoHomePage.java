@@ -3,10 +3,10 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
+public class SauceDemoHomePage {
     private WebDriver driver;
 
-    public HomePage(WebDriver driver) {
+    public SauceDemoHomePage(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+import interfaces.LoginPage;
+
+public class SauceDemoLoginPage implements LoginPage{
 	private WebDriver driver;
 
-	public LoginPage(WebDriver driver) {
+	public SauceDemoLoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
 

@@ -1,4 +1,22 @@
+### Page Object Model
+1.  Page Object Model is a design pattern to create Object Repository for web UI elements. Under this model, for each web page in the application, there should be corresponding page class. This Page class will find the WebElements of that web page and also contains Page methods which perform operations on those WebElements.
+2. Advantages:
+ - Reduces the duplication of code
+ - UI changes only affect to a single Page Object, not to the actual test codes
+ - Makes tests more readable
+ - Improves the maintainability of tests
 
+   ![image](https://github.com/user-attachments/assets/401b5335-3c96-4ebe-a1a4-68b464febe90)
+
+# Practice 1:
+
+1. Navigate to http://demo.guru99.com/v4/index.php
+2. Login with valid account
+3. Verify login successful or not
+4. Log out
+5. Verify logout successful or not
+ Guru99 Bank Home Page 
+ 
 # Exercise 3: Automated this test case using POM
 1. Go to https://www.saucedemo.com/
 2. Login with valid account

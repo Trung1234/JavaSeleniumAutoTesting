@@ -3,7 +3,9 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SauceDemoHomePage {
+import interfaces.HomePage;
+
+public class SauceDemoHomePage implements HomePage{
     private WebDriver driver;
 
     public SauceDemoHomePage(WebDriver driver) {

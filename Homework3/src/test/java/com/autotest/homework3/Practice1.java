@@ -21,14 +21,15 @@ public class Practice1 extends SetupBrowser {
         loginPage.enterPassword("ybEmaqU");
         // 2. Login with valid account
         loginPage.clickLogin();
-        Thread.sleep(5000);
+
         // 3. Verify login successful or not
         assertTrue(loginPage.isLoginSuccessful());
         Thread.sleep(3000);
         Guru99HomePage homePage = new Guru99HomePage(driver);
 
-        // 5. Click Logout
-        homePage.clickLogout();
+        // 5. Logout
+        driver.navigate().back();
+
         Thread.sleep(2000);
         // 6. Verify logout successful or not
         assertTrue(homePage.isLogoutSuccessful());

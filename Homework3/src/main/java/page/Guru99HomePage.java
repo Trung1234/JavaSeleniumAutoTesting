@@ -15,7 +15,7 @@ public class Guru99HomePage implements HomePage {
 
 	@Override
 	public void clickLogout() {
-		driver.findElement(By.cssSelector("/a[href='Logout.php']")).click();
+		driver.findElement(By.xpath("//a[normalize-space()='Log out']")).click();
 	}
 
 	@Override

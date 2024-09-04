@@ -7,9 +7,9 @@ Steps:
 2. On the left side, click on filter size = S
 3. Add 2 items to cart
 4. Go to the cart
-5. Click "CHECKOUT" button
-6.1 Verify the alert is displayed
-6.2 Verify the subtotal price in the cart and in the alert is matched
+5. Click "CHECKOUT" button 
+6. Verify the alert is displayed
+7. Verify the subtotal price in the cart and in the alert is matched
 ![image](https://github.com/user-attachments/assets/eaa07b99-ab5c-483b-9edc-5373311fa7a9)
 
 

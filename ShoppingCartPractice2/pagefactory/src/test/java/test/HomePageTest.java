@@ -16,7 +16,7 @@ public class HomePageTest  extends BaseTest {
         homePage.goToLink("https://react-shopping-cart-67954.firebaseapp.com/index.php/");
         Thread.sleep(2000);
         //On the left side, click on filter size = S
-       // homePage.goFilterSizeS();
+        homePage.goFilterSizeS();
         homePage.addItemToCart();
 //
 //        homePage.goToCart();;

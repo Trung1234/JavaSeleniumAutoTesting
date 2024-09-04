@@ -1,7 +1,6 @@
 package pages;
 
 import java.util.List;
-import java.util.Objects;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +20,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@class='sc-1h98xa9-2 fGgnoG']")
     private WebElement cartIcon;
 
+    @FindBy(xpath = "//p[@class='sc-1h98xa9-9 jzywDV']")
+    private WebElement total;
+    
     @FindBy(xpath = "//p[text()='SUBTOTAL']/following-sibling::div/p")
     private WebElement lblSubTotalAmount;
 
@@ -34,11 +36,9 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public boolean isAlertExist() {
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        //Store the alert text in a variable
-        String text = alert.getText();
-        return Objects.nonNull(text);
+    public String getAlertText() {
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());;
+        return alert.getText();
     }
 
     public void goToLink(String url) {

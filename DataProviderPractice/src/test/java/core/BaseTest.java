@@ -2,8 +2,10 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -11,13 +13,20 @@ public class BaseTest {
 
     private WebDriver driver;
 
-    @BeforeSuite
-    public void beforeSuite() {
-    	WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+    @BeforeTest 
+    @Parameters("browser")
+    public void beforeSuite(String browser) {
+    	if (browser.equalsIgnoreCase("chrome"))  {
+    		WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+    	}
+    	if (browser.equalsIgnoreCase("firefox"))  {
+    		 WebDriverManager.firefoxdriver().setup();
+             driver = new FirefoxDriver();
+    	}
     }
 
-    @AfterSuite
+    @AfterTest
     public void afterSuite() {
         if (driver != null) {
             driver.close();

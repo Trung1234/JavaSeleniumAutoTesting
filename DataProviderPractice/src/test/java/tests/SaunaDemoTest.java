@@ -52,6 +52,6 @@ public class SaunaDemoTest extends BaseTest {
 //                };
 		String filePath = "DataLogin.xlsx"; // file name in src/test/resources folder
 		ClassLoader classLoader = SaunaDemoTest.class.getClassLoader();
-		return ExcelUtils.getExcelData(classLoader.getResource(filePath).getFile(), "Data");
+		return ExcelUtils.getTableArray(classLoader.getResource(filePath).getFile(), "Data");
 	}
 }

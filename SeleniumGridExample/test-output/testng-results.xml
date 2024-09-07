@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-07T20:21:41 ICT" name="TestSuite" finished-at="2024-09-07T20:21:51 ICT" duration-ms="10245">
+    <groups>
+    </groups>
+    <test started-at="2024-09-07T20:21:41 ICT" name="ChromeTest" finished-at="2024-09-07T20:21:49 ICT" duration-ms="7276">
+      <class name="com.example.BrowserTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.example.BrowserTest@514646ef]" started-at="2024-09-07T20:21:41 ICT" name="setup" finished-at="2024-09-07T20:21:45 ICT" duration-ms="3578" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testTitle()[pri:0, instance:com.example.BrowserTest@514646ef]" started-at="2024-09-07T20:21:45 ICT" name="testTitle" finished-at="2024-09-07T20:21:48 ICT" duration-ms="2738" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.BrowserTest@514646ef]" started-at="2024-09-07T20:21:48 ICT" name="tearDown" finished-at="2024-09-07T20:21:49 ICT" duration-ms="857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.BrowserTest -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2024-09-07T20:21:41 ICT" name="FirefoxTest" finished-at="2024-09-07T20:21:51 ICT" duration-ms="10245">
+      <class name="com.example.BrowserTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.example.BrowserTest@f1da57d]" started-at="2024-09-07T20:21:41 ICT" name="setup" finished-at="2024-09-07T20:21:49 ICT" duration-ms="7500" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testTitle()[pri:0, instance:com.example.BrowserTest@f1da57d]" started-at="2024-09-07T20:21:49 ICT" name="testTitle" finished-at="2024-09-07T20:21:50 ICT" duration-ms="1380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.BrowserTest@f1da57d]" started-at="2024-09-07T20:21:50 ICT" name="tearDown" finished-at="2024-09-07T20:21:51 ICT" duration-ms="1298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.BrowserTest -->
+    </test> <!-- FirefoxTest -->
+  </suite> <!-- TestSuite -->
+</testng-results>

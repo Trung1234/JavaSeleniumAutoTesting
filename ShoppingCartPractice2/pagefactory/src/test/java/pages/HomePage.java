@@ -41,9 +41,7 @@ public class HomePage extends BasePage {
         return alert.getText();
     }
 
-    public void goToLink(String url) {
-        driver.get(url);
-    }
+   
 
     public String getSubtotal() {
         return lblSubTotalAmount.getText();

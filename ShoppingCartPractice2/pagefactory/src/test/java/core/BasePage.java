@@ -18,5 +18,5 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT),  Duration.ofSeconds(POLLING));
         PageFactory.initElements(driver, this);
-    }
+    }   
 }

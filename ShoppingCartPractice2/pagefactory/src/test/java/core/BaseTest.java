@@ -14,8 +14,6 @@ public class BaseTest {
     @BeforeSuite
     public void beforeSuite() {
     	WebDriverManager.chromedriver().setup();
-//    	WebDriver driver = new ChromeDriver();
-//    	System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
@@ -27,6 +25,10 @@ public class BaseTest {
         }
     }
 
+    public void goToLink(String url) {
+        driver.get(url);
+    }
+    
     public WebDriver getDriver() {
         return driver;
     }

@@ -11,4 +11,6 @@
   java -jar selenium-server-<version>.jar node
 ![image](https://github.com/user-attachments/assets/31ccb4fd-847e-4760-90e8-acccd080c91a)
 
-## References: https://www.selenium.dev/documentation/grid/getting_started/ 
+## References:
+https://www.selenium.dev/documentation/grid/getting_started/ 
+Download server: https://www.selenium.dev/downloads/ 

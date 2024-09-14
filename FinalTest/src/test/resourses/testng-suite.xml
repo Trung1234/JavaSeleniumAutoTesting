@@ -5,7 +5,7 @@
     <test name="ChromeTest">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name ="tests.SaunaDemoTest">
+            <class name ="tests.ATC001DoLoginTest">
             </class>
         </classes>
     </test>
@@ -13,7 +13,7 @@
     <test name="FirefoxTest">
  		   <parameter name="browser" value="firefox" />
        <classes>
-            <class name ="tests.SaunaDemoTest">
+            <class name ="tests.ATC001DoLoginTest">
             </class>
         </classes>
     </test>

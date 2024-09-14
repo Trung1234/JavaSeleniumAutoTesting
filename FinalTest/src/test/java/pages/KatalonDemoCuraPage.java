@@ -32,7 +32,8 @@ public class KatalonDemoCuraPage extends BasePage {
 	@FindBy(how = How.ID, using = "btn-login")
 	private WebElement loginButton;
 
-
+	@FindBy(how = How.ID, using = "btn-make-appointment")
+	private WebElement buttonMakeAppointment;
 
 	public KatalonDemoCuraPage(WebDriver driver) {
 		super(driver);
@@ -82,6 +83,8 @@ public class KatalonDemoCuraPage extends BasePage {
 		}
 	}
 	
-	
+	public void clickMakeAppointment() {
+		buttonMakeAppointment.click();
+	}
 	
 }

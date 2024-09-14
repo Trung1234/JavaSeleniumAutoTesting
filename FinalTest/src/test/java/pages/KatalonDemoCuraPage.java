@@ -25,8 +25,6 @@ public class KatalonDemoCuraPage extends BasePage {
 	@FindBy(how = How.NAME, using = "username")
 	private WebElement userName;
 
-	@FindBy(how = How.CSS, using = "label[for='txt-username']")
-	private WebElement labelUserName;
 
 	@FindBy(how = How.NAME, using = "password")
 	private WebElement passwordText;

@@ -9,7 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 import core.BasePage;
 
 public class BookingPage extends BasePage {
-
+	
+	
 	@FindBy(how = How.ID, using = "btn-book-appointment")
 	private WebElement buttonBookAppointment;
 
@@ -24,7 +25,13 @@ public class BookingPage extends BasePage {
 
 	@FindBy(how = How.ID, using = "radio_program_medicaid")
 	private WebElement radioMedicaid;
-
+	
+	@FindBy(how = How.ID, using = "txt_visit_date")
+	private WebElement txtVsitDate;
+	
+	@FindBy(how = How.ID, using = "txt_comment")
+	private WebElement txtComment;
+	
 	public BookingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -34,12 +41,11 @@ public class BookingPage extends BasePage {
 		buttonMakeAppointment.click();
 	}
 
-	public void selectFacility() {
+	public void selectFacility(String facility) {
 		// Create a Select object with the dropdown WebElement
 		Select dropdown = new Select(comboSacility);
-
 		// Select an option by visible text
-		dropdown.selectByVisibleText("Seoul CURA Healthcare Center");
+		dropdown.selectByVisibleText(facility);
 	}
 
 	public void checkHospotalReadmission() {
@@ -49,4 +55,20 @@ public class BookingPage extends BasePage {
 	public void checkRadioMedicaid() {
 		radioMedicaid.click();
 	}
+	
+	public void entervsitDate(String visitDate) {
+		txtVsitDate.sendKeys(visitDate);
+	}
+	
+	public void enterComment(String comment) {
+		txtComment.sendKeys(comment);
+	}
+	
+	public void clickBookAppointment() {
+		buttonBookAppointment.click();
+	}
+	
+//	public Boolean isInputInforDisplay() {
+//		return chkHospotalReadmission.isSelected() && 
+//	}
 }

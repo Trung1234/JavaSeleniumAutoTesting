@@ -34,13 +34,13 @@ public class KatalonDemoCuraPage extends BasePage {
 	@FindBy(how = How.ID, using = "btn-login")
 	private WebElement loginButton;
 
-	@FindBy(how = How.ID, using = "btn-book-appointment")
-	private WebElement buttonAppointment;
+
 
 	public KatalonDemoCuraPage(WebDriver driver) {
 		super(driver);
 	}
 
+	/// ATC-001-Do_Login
 	public void clickMenu() throws InterruptedException {
 		menuToggle.click();
 		Thread.sleep(2000);
@@ -77,11 +77,13 @@ public class KatalonDemoCuraPage extends BasePage {
 
 	public boolean isLogoutSuccessful() {
 		try {
-			 logoutMenu.isDisplayed();
-			 return false;
+			logoutMenu.isDisplayed();
+			return false;
 		} catch (NoSuchElementException e) {
 			return true;
 		}
 	}
-
+	
+	
+	
 }

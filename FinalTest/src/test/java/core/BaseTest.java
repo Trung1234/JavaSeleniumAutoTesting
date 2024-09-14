@@ -2,44 +2,51 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
-    private WebDriver driver;
+	private WebDriver driver;
 
-    @BeforeTest 
-    @Parameters("browser")
-    public void beforeSuite(String browser) {
-    	if (browser.equalsIgnoreCase("chrome"))  {
-    		WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-    	}
-    	if (browser.equalsIgnoreCase("firefox"))  {
-    		 WebDriverManager.firefoxdriver().setup();
-             driver = new FirefoxDriver();
-    	}
-    }
+	protected static final String USER_NAME = "John Doe";
 
-    @AfterTest
-    public void afterSuite() {
-        if (driver != null) {
-            driver.close();
-            driver.quit();
-        }
-    }
+	protected static final String PASSWORD = "ThisIsNotAPassword";
 
-    public void goToLink(String url) {
-        driver.get(url);
-    }
-    
-    public WebDriver getDriver() {
-        return driver;
-    }
+	@BeforeTest
+	public void beforeSuite() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
+//	@BeforeTest
+//	@Parameters("browser")
+//	public void beforeSuite(String browser) {
+//		if (browser.equalsIgnoreCase("chrome")) {
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//		}
+//		if (browser.equalsIgnoreCase("firefox")) {
+//			WebDriverManager.firefoxdriver().setup();
+//			driver = new FirefoxDriver();
+//		}
+//	}
+
+	@AfterTest
+	public void afterSuite() {
+		if (driver != null) {
+			driver.close();
+			driver.quit();
+		}
+	}
+
+	protected void goToLink(String url) {
+		driver.get(url);
+	}
+
+	protected WebDriver getDriver() {
+		return driver;
+	}
 
 }

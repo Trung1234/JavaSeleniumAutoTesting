@@ -17,7 +17,6 @@ public class BaseTest {
 
 	protected static final String PASSWORD = "ThisIsNotAPassword";
 
-
 	@BeforeTest
 	@Parameters("browser")
 	public void beforeSuite(String browser) {
@@ -30,7 +29,7 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 		}
 	}
-
+	
 	@AfterTest
 	public void afterSuite() {
 		if (driver != null) {

@@ -9,14 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 import core.BasePage;
 
 public class BookingPage extends BasePage {
-	
-	
+		
 	@FindBy(how = How.ID, using = "btn-book-appointment")
 	private WebElement buttonBookAppointment;
-
-	@FindBy(how = How.ID, using = "btn-make-appointment")
-	private WebElement buttonMakeAppointment;
-
+	
 	@FindBy(how = How.ID, using = "combo_facility")
 	private WebElement comboSacility;
 
@@ -37,9 +33,7 @@ public class BookingPage extends BasePage {
 	}
 
 	// ATC-002-Make Appointment
-	public void clickMakeAppointment() {
-		buttonMakeAppointment.click();
-	}
+	
 
 	public void selectFacility(String facility) {
 		// Create a Select object with the dropdown WebElement

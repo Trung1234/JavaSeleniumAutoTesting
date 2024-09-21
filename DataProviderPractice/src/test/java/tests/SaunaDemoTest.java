@@ -17,10 +17,10 @@ public class SaunaDemoTest extends BaseTest {
 
 	@Test(dataProvider = "loginData")
 	public void testogin(String username, String password, String result) throws InterruptedException {
-		// 1. Go to https://www.saucedemo.com/
-		goToLink("https://www.saucedemo.com/");
-
 		LoginPage loginPage = new LoginPage(getDriver());
+		// 1. Go to https://www.saucedemo.com/
+		loginPage.navigateTo("https://www.saucedemo.com/");
+		
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		// 2. Validate 2 fields Username and password with 4 cases:
@@ -28,9 +28,9 @@ public class SaunaDemoTest extends BaseTest {
 		Thread.sleep(2000);
 		// Verify login successful or not
 		if (ResultCode.SUCCESS.getMessage().equalsIgnoreCase(result)) {
-			assertTrue(loginPage.isLoginSuccessful());
+			assertTrue(loginPage.isPageLoaded());
 		} else {
-			assertFalse(loginPage.isLoginSuccessful());
+			assertFalse(loginPage.isPageLoaded());
 		}
 	}
 

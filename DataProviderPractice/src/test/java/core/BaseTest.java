@@ -33,10 +33,6 @@ public class BaseTest {
             driver.quit();
         }
     }
-
-    public void goToLink(String url) {
-        driver.get(url);
-    }
     
     public WebDriver getDriver() {
         return driver;

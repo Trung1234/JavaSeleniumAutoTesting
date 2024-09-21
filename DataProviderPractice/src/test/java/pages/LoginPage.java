@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 
 import core.BasePage;
 
-public class LoginPage  extends BasePage {
+public class LoginPage extends BasePage<LoginPage> {
 	
     @FindBy(how = How.NAME, using = "user-name")
     private WebElement userName;
@@ -19,7 +19,13 @@ public class LoginPage  extends BasePage {
     @FindBy(how = How.NAME, using  = "login-button")
     private WebElement loginButton;
     
-    @FindBy(how = How.CSS, using  = ".inventory_list")
+    @Override
+	public LoginPage navigateTo(String url) {
+		// TODO Auto-generated method stub
+		return super.navigateTo(url);
+	}
+
+	@FindBy(how = How.CSS, using  = ".inventory_list")
     private WebElement loginPage;
 
 
@@ -39,12 +45,13 @@ public class LoginPage  extends BasePage {
 		loginButton.click();
 	}
 
-	public boolean isLoginSuccessful() {
+	@Override
+	public boolean isPageLoaded() {
 		try {
 		    return loginPage.isDisplayed();
 		} catch (NoSuchElementException e) {
 		    return false;
-		}		
+		}
 	}
 
 }
